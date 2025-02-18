@@ -14,11 +14,11 @@ The U.S. Fish and Wildlife Service conducts annual surveys to identify the prese
 
 ## Installation
 
-Scripts rely on [tidyverse](https://www.tidyverse.org/) and [sf] (https://r-spatial.github.io/sf/) packages.
+Scripts rely on [tidyverse](https://www.tidyverse.org/) and [sf](https://r-spatial.github.io/sf/) packages.
 
 ## Usage
 
-The scripts were developed to 
+Scripts are currently designed for specific data collected in 2023 by the U.S. Fish and Wildlife Service. Until this workflow is generalized, users should not attempt to apply these scripts to their polygons.
 
 ## Getting help
 
