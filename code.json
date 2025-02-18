@@ -1,8 +1,8 @@
 [
   {
-    "name": "r7-repo-template",
+    "name": "ak-herbicide-efficiency",
     "organization": "U.S. Fish & Wildlife Service",
-    "description": "R7 GitHub Repository Template",
+    "description": "Alaska Herbicide Efficiency Random Point Sample Generator",
     "version": "0.1.0",
     "status": "Development",
 
@@ -11,15 +11,15 @@
       "licenses": [
         {
           "name": "Public Domain, CC0-1.0",
-          "URL": "https://github.com/USFWS/r7-repo-template/blob/main/LICENSE.md"
+          "URL": "https://github.com/USFWS/ak-herbicide-efficiency/blob/main/LICENSE.md"
         }
       ]
     },
 
-    "homepageURL": "https://github.com/USFWS/r7-repo-template",
-    "downloadURL": "https://github.com/USFWS/r7-repo-template/archive/refs/heads/main.zip",
-    "disclaimerURL": "https://github.com/USFWS/r7-repo-template/blob/main/DISCLAIMER.md",
-    "repositoryURL": "https://github.com/USFWS/r7-repo-template.git",
+    "homepageURL": "https://github.com/USFWS/ak-herbicide-efficiency",
+    "downloadURL": "https://github.com/USFWS/ak-herbicide-efficiency/archive/refs/heads/main.zip",
+    "disclaimerURL": "https://github.com/USFWS/ak-herbicide-efficiency/blob/main/DISCLAIMER.md",
+    "repositoryURL": "https://github.com/USFWS/ak-herbicide-efficiency.git",
     "vcs": "git",
 
     "laborHours": 4,
@@ -31,17 +31,15 @@
 
     "languages": [
       "r",
-      "json",
-      "md",
     ],
 
     "contact": {
-      "name": "Your first and last name",
-      "email": "firstname_lastname@fws.gov"
+      "name": "Jonah Withers",
+      "email": "jonah_withers@fws.gov"
     },
 
     "date": {
-      "metadataLastUpdated": "2023-05-17"
+      "metadataLastUpdated": "2025-02-18"
     }
   }
 ]
