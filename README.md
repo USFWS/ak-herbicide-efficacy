@@ -30,6 +30,5 @@ Contact the project maintainer for information about contributing to this reposi
 
 -----
 
-![](https://i.creativecommons.org/l/by/4.0/88x31.png) This work is
-licensed under a [Creative Commons Attribution 1.0 International
-License](https://creativecommons.org/licenses/by/1.0/).
+This work is
+licensed under a [Creative Commons Zero v1.0 Universal](https://choosealicense.com/licenses/cc0-1.0/).
