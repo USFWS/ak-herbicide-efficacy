@@ -22,13 +22,6 @@
     "repositoryURL": "https://github.com/USFWS/ak-herbicide-efficiency.git",
     "vcs": "git",
 
-    "laborHours": 4,
-
-    "tags": [
-      "r7",
-      "usfws"
-    ],
-
     "languages": [
       "r",
     ],
