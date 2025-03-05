@@ -3,7 +3,7 @@ library(tidyverse)
 library(sp)
 library("stringr")
 
-test
+
 # Ugashik OH --------------------------------------------------------------
 Ugashik_spatial<-st_read("./data/UgashikOrangeHawkweedJul2021/UgashikOrangeHawkweedJul2021.shp")
 
@@ -31,7 +31,7 @@ SRS_UGOH<-as.data.frame(SRS_UGOH)
 #create two columns
 SRS_UGOH<-SRS_UGOH %>%
   separate(geometry, c("Longitude", "Latitude"), ", ")
-  
+
 #Clean it up, Export random sample
 SRS_UGOH$Longitude<-substr(SRS_UGOH$Longitude, start=3, stop=nchar(SRS_UGOH$Longitude)-1)
 SRS_UGOH$Latitude<-substr(SRS_UGOH$Latitude, start=1, stop=nchar(SRS_UGOH$Latitude)-1)
@@ -40,17 +40,15 @@ SRS_UGOH$Site<-rep("UGOH",length(SRS_UGOH$Latitude))
 SRS_UGOH$Year<-rep(2025,length(SRS_UGOH$Latitude))
 SRS_UGOH$Sample<-rep(1:length(SRS_UGOH$Latitude))
 SRS_UGOH$Site<-paste(SRS_UGOH$Site, "_", SRS_UGOH$Sample,"_",SRS_UGOH$Year)
-  
+
 SRS_UGOH<-SRS_UGOH |> 
   select(Site,Latitude,Longitude)
-
-#write.csv(SRS_UGOH,"C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2025_Sampling/Ugashik_OH_SRS_20250207.csv", row.names=FALSE)
 
 
 
 # CB_Thistle --------------------------------------------------------------
-setwd ("C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2023_Sampling/IZMInvasives2022")
-CB_Thistle_spatial<-st_read(dsn=".",layer="2022ThistleCombinedPolygon")
+
+CB_Thistle_spatial<-st_read("./data/IZMInvasives2022/2022ThistleCombinedPolygon.shp")
 names(CB_Thistle_spatial)
 
 
@@ -59,44 +57,40 @@ st_area(CB_Thistle_spatial)
 plot(CB_Thistle_spatial)
 
 set.seed(2025)
-SRS_CBTH<-st_sample(CB_Thistle_spatial,size=120)
+SRS_CBCT<-st_sample(CB_Thistle_spatial,size=120)
 
 #Alaska Albers, EPSG:3338 to wgs84 EPSG 4326
-SRS_CBTH<-st_transform(SRS_CBTH, 4326)
+SRS_CBCT<-st_transform(SRS_CBCT, 4326)
 
 ggplot() +
   geom_sf(data = CB_Thistle_spatial,col="grey") +
-  geom_sf(data = SRS_CBTH, col ="black")+
+  geom_sf(data = SRS_CBCT, col ="black")+
   theme_bw() +
   ggtitle("")
 
-#SRS_CBTH is a spatial object, covert to data.frame
-SRS_CBTH<-as.data.frame(SRS_CBTH)
+#SRS_CBCT is a spatial object, covert to data.frame
+SRS_CBCT<-as.data.frame(SRS_CBCT)
 #create two columns
-SRS_CBTH<-SRS_CBTH %>%
+SRS_CBCT<-SRS_CBCT %>%
   separate(geometry, c("Longitude", "Latitude"), ", ")
 
 #Clean it up, Export random sample
-SRS_CBTH$Longitude<-substr(SRS_CBTH$Longitude, start=3, stop=nchar(SRS_CBTH$Longitude)-1)
-SRS_CBTH$Latitude<-substr(SRS_CBTH$Latitude, start=1, stop=nchar(SRS_CBTH$Latitude)-1)
+SRS_CBCT$Longitude<-substr(SRS_CBCT$Longitude, start=3, stop=nchar(SRS_CBCT$Longitude)-1)
+SRS_CBCT$Latitude<-substr(SRS_CBCT$Latitude, start=1, stop=nchar(SRS_CBCT$Latitude)-1)
 
-SRS_CBTH$Site<-rep("CBTH",length(SRS_CBTH$Latitude))
-SRS_CBTH$Year<-rep(2025,length(SRS_CBTH$Latitude))
-SRS_CBTH$Sample<-rep(1:length(SRS_CBTH$Latitude))
-SRS_CBTH$Site<-paste(SRS_CBTH$Site, "_",  SRS_CBTH$Sample,"_",SRS_CBTH$Year )
+SRS_CBCT$Site<-rep("CBCT",length(SRS_CBCT$Latitude))
+SRS_CBCT$Year<-rep(2025,length(SRS_CBCT$Latitude))
+SRS_CBCT$Sample<-rep(1:length(SRS_CBCT$Latitude))
+SRS_CBCT$Site<-paste(SRS_CBCT$Site, "_",  SRS_CBCT$Sample,"_",SRS_CBCT$Year )
 
 
 
-SRS_CBTH<-SRS_CBTH |> 
+SRS_CBCT<-SRS_CBCT |> 
   select(Site,Latitude,Longitude)
 
-
-
-#write.csv(SRS_CBTH,"C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2025_Sampling/CB_Thistle_SRS_20250207.csv", row.names=FALSE)
-
 # CB_oxeye --------------------------------------------------------------
-setwd ("C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2023_Sampling/IZMInvasives2022")
-CB_Oxeye_spatial<-st_read(dsn=".",layer="2022OxeyeCombinedPolygon")
+
+CB_Oxeye_spatial<-st_read("./data/IZMInvasives2022/2022OxeyeCombinedPolygon.shp")
 names(CB_Oxeye_spatial)
 
 
@@ -105,39 +99,39 @@ st_area(CB_Oxeye_spatial)
 plot(CB_Oxeye_spatial)
 
 set.seed(2025)
-SRS_CBOX<-st_sample(CB_Oxeye_spatial,size=40)
+SRS_CBOD<-st_sample(CB_Oxeye_spatial,size=40)
 
 #Alaska Albers, EPSG:3338 to wgs84 EPSG 4326
-SRS_CBOX<-st_transform(SRS_CBOX, 4326)
+SRS_CBOD<-st_transform(SRS_CBOD, 4326)
 
 ggplot() +
   geom_sf(data = CB_Oxeye_spatial,col="grey") +
-  geom_sf(data = SRS_CBOX, col ="black")+
+  geom_sf(data = SRS_CBOD, col ="black")+
   theme_bw() +
   ggtitle("")
 
-#SRS_CBOX is a spatial object, covert to data.frame
-SRS_CBOX<-as.data.frame(SRS_CBOX)
+#SRS_CBOD is a spatial object, covert to data.frame
+SRS_CBOD<-as.data.frame(SRS_CBOD)
 #create two columns
-SRS_CBOX<-SRS_CBOX %>%
+SRS_CBOD<-SRS_CBOD %>%
   separate(geometry, c("Longitude", "Latitude"), ", ")
 
 #Clean it up, Export random sample
-SRS_CBOX$Longitude<-substr(SRS_CBOX$Longitude, start=3, stop=nchar(SRS_CBOX$Longitude)-1)
-SRS_CBOX$Latitude<-substr(SRS_CBOX$Latitude, start=1, stop=nchar(SRS_CBOX$Latitude)-1)
+SRS_CBOD$Longitude<-substr(SRS_CBOD$Longitude, start=3, stop=nchar(SRS_CBOD$Longitude)-1)
+SRS_CBOD$Latitude<-substr(SRS_CBOD$Latitude, start=1, stop=nchar(SRS_CBOD$Latitude)-1)
 
-SRS_CBOX$Site<-rep("CBOX",length(SRS_CBOX$Latitude))
-SRS_CBOX$Year<-rep(2025,length(SRS_CBOX$Latitude))
-SRS_CBOX$Sample<-rep(1:length(SRS_CBOX$Latitude))
-SRS_CBOX$Site<-paste(SRS_CBOX$Site, "_", SRS_CBOX$Sample, "_", SRS_CBOX$Year)
+SRS_CBOD$Site<-rep("CBOD",length(SRS_CBOD$Latitude))
+SRS_CBOD$Year<-rep(2025,length(SRS_CBOD$Latitude))
+SRS_CBOD$Sample<-rep(1:length(SRS_CBOD$Latitude))
+SRS_CBOD$Site<-paste(SRS_CBOD$Site, "_", SRS_CBOD$Sample, "_", SRS_CBOD$Year)
 
-SRS_CBOX<-SRS_CBOX |> 
+SRS_CBOD<-SRS_CBOD |> 
   select(Site,Latitude,Longitude)
 
 
 # CB_Hawkweed--------------------------------------------------------------
-setwd ("C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2023_Sampling/IZMInvasives2022")
-CB_Hawkweed_spatial<-st_read(dsn=".",layer="2022HawkweedCombinedPolygon")
+
+CB_Hawkweed_spatial<-st_read("./data/IZMInvasives2022/2022HawkweedCombinedPolygon.shp")
 names(CB_Hawkweed_spatial)
 
 
@@ -146,76 +140,38 @@ st_area(CB_Hawkweed_spatial)
 plot(CB_Hawkweed_spatial)
 
 set.seed(2025)
-SRS_CBHW<-st_sample(CB_Hawkweed_spatial,size=40)
+SRS_CBOH<-st_sample(CB_Hawkweed_spatial,size=40)
 
 #Alaska Albers, EPSG:3338 to wgs84 EPSG 4326
-SRS_CBHW<-st_transform(SRS_CBHW, 4326)
+SRS_CBOH<-st_transform(SRS_CBOH, 4326)
 
 ggplot() +
   geom_sf(data = CB_Hawkweed_spatial,col="grey") +
-  geom_sf(data = SRS_CBHW, col ="black")+
+  geom_sf(data = SRS_CBOH, col ="black")+
   theme_bw() +
   ggtitle("")
 
-#SRS_CBHW is a spatial object, covert to data.frame
-SRS_CBHW<-as.data.frame(SRS_CBHW)
+#SRS_CBOH is a spatial object, covert to data.frame
+SRS_CBOH<-as.data.frame(SRS_CBOH)
 #create two columns
-SRS_CBHW<-SRS_CBHW %>%
+SRS_CBOH<-SRS_CBOH %>%
   separate(geometry, c("Longitude", "Latitude"), ", ")
 
 #Clean it up, Export random sample
-SRS_CBHW$Longitude<-substr(SRS_CBHW$Longitude, start=3, stop=nchar(SRS_CBHW$Longitude)-1)
-SRS_CBHW$Latitude<-substr(SRS_CBHW$Latitude, start=1, stop=nchar(SRS_CBHW$Latitude)-1)
+SRS_CBOH$Longitude<-substr(SRS_CBOH$Longitude, start=3, stop=nchar(SRS_CBOH$Longitude)-1)
+SRS_CBOH$Latitude<-substr(SRS_CBOH$Latitude, start=1, stop=nchar(SRS_CBOH$Latitude)-1)
 
-SRS_CBHW$Site<-rep("CBHW",length(SRS_CBHW$Latitude))
-SRS_CBHW$Year<-rep(2025,length(SRS_CBHW$Latitude))
-SRS_CBHW$Sample<-rep(1:length(SRS_CBHW$Latitude))
-SRS_CBHW$Site<-paste(SRS_CBHW$Site, "_", SRS_CBHW$Sample, "_", SRS_CBHW$Year)
+SRS_CBOH$Site<-rep("CBOH",length(SRS_CBOH$Latitude))
+SRS_CBOH$Year<-rep(2025,length(SRS_CBOH$Latitude))
+SRS_CBOH$Sample<-rep(1:length(SRS_CBOH$Latitude))
+SRS_CBOH$Site<-paste(SRS_CBOH$Site, "_", SRS_CBOH$Sample, "_", SRS_CBOH$Year)
 
-SRS_CBHW<-SRS_CBHW |> 
+SRS_CBOH<-SRS_CBOH |> 
   select(Site,Latitude,Longitude)
 
-#write.csv(SRS_CBHW,"C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2025_Sampling/CB_Hawkweed_SRS_20250207.csv", row.names=FALSE)
-
-# CB_Buttercup--------------------------------------------------------------
-setwd ("C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2023_Sampling/IZMInvasives2022")
-CB_Buttercup_spatial<-st_read(dsn=".",layer="USFWSCreepingButtercup2022")
-names(CB_Buttercup_spatial)
+#write.csv(SRS_CBOH,"C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2025_Sampling/CB_Hawkweed_SRS_20250207.csv", row.names=FALSE)
 
 
-CB_Buttercup_spatial$geometry
-st_area(CB_Buttercup_spatial)
-plot(CB_Buttercup_spatial)
 
-set.seed(2025)
-SRS_CBBC<-st_sample(CB_Buttercup_spatial,size=120)
-
-#Alaska Albers, EPSG:3338 to wgs84 EPSG 4326
-SRS_CBBC<-st_transform(SRS_CBBC, 4326)
-
-ggplot() +
-  geom_sf(data = CB_Buttercup_spatial,col="grey") +
-  geom_sf(data = SRS_CBBC, col ="black")+
-  theme_bw() +
-  ggtitle("")
-
-#SRS_CBBC is a spatial object, covert to data.frame
-SRS_CBBC<-as.data.frame(SRS_CBBC)
-#create two columns
-SRS_CBBC<-SRS_CBBC %>%
-  separate(geometry, c("Longitude", "Latitude"), ", ")
-
-#Clean it up, Export random sample
-SRS_CBBC$Longitude<-substr(SRS_CBBC$Longitude, start=3, stop=nchar(SRS_CBBC$Longitude)-1)
-SRS_CBBC$Latitude<-substr(SRS_CBBC$Latitude, start=1, stop=nchar(SRS_CBBC$Latitude)-1)
-
-SRS_CBBC$Site<-rep("CBBC",length(SRS_CBBC$Latitude))
-SRS_CBBC$Year<-rep(2025,length(SRS_CBBC$Latitude))
-SRS_CBBC$Sample<-rep(1:length(SRS_CBBC$Latitude))
-SRS_CBBC$Site<-paste(SRS_CBBC$Site, "_", SRS_CBBC$Sample, "_", SRS_CBBC$Year)
-
-SRS_CBBC<-SRS_CBBC |> 
-  select(Site,Latitude,Longitude)
-
-SRS_Invasive_SouthernAlaska<-rbind(SRS_UGOH,SRS_CBBC,SRS_CBHW,SRS_CBOX,SRS_CBTH)
-write.csv(SRS_Invasive_SouthernAlaska,"C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2025_Sampling/SRS_Invasive_SouthernAlaska_20250213.csv", row.names=FALSE)
+SRS_Invasive_SouthernAlaska<-rbind(SRS_UGOH,SRS_CBOH,SRS_CBOD,SRS_CBCT)
+write.csv(SRS_Invasive_SouthernAlaska,"C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2025_Sampling/SRS_Invasive_SouthernAlaska_20250218.csv", row.names=FALSE)
