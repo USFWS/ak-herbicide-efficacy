@@ -1,8 +1,8 @@
 ### Evaluate sample size requirements for invasive species treatments in Southern Alaska
 ### Coefficient values based on 2023-3034 data, Cold Bay daisy #picked that scenario cause hardest to detect a change
-###Written by Anna-Marie Benson
+###Anna-Marie Benson
 library(tidyverse)
-
+test
 #Set parameters
 n0<- 120 #sample size before
 n1<- 120 #samples size after
