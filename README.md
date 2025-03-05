@@ -6,7 +6,7 @@
 
 <!-- badges: end -->
 
-# Alaska Herbicide Efficiency
+# Alaska Herbicide Efficacy
 
 ## Overview
 
