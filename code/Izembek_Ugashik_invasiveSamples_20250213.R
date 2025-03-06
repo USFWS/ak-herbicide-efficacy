@@ -169,9 +169,7 @@ SRS_CBOH$Site<-paste(SRS_CBOH$Site, "_", SRS_CBOH$Sample, "_", SRS_CBOH$Year)
 SRS_CBOH<-SRS_CBOH |> 
   select(Site,Latitude,Longitude)
 
-#write.csv(SRS_CBOH,"C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2025_Sampling/CB_Hawkweed_SRS_20250207.csv", row.names=FALSE)
-
 
 
 SRS_Invasive_SouthernAlaska<-rbind(SRS_UGOH,SRS_CBOH,SRS_CBOD,SRS_CBCT)
-write.csv(SRS_Invasive_SouthernAlaska,"C:/Users/AMBenson/OneDrive - DOI/Documents/InvasiveSpecies/SouthernAlaska/2025_Sampling/SRS_Invasive_SouthernAlaska_20250218.csv", row.names=FALSE)
+write.csv(SRS_Invasive_SouthernAlaska,"./data/Sampling/SRS_Invasive_SouthernAlaska_20250218.csv", row.names=FALSE)
