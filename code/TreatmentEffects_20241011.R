@@ -24,7 +24,14 @@ UGOH<-data |>
 data <- data[, c("pointname", "Year", "infestationname","Count","geometry","dotcolor")] # leave the row index blank to keep all rows
 #replace space in pointname wiht underscore
 data$pointname <- sub(" ", "_", data$pointname)
-data<-unite(data,Site,pointname:Year)
+data<-unite(data,Site,pointname:Year,remove=FALSE)
+
+data$name<-substr(data$pointname,1,4)
+data$label<-data$infestationname
+
+data <- data[, c("Site","name","label","Year","pointname", "infestationname","Count","geometry","dotcolor")]
+
+write.csv(data,"./data/FinalDataFiles/data_final_20232024_20250306.csv",row.names = F)
 # CBCT ----------------------------------------------------------------------
 
 
