@@ -42,7 +42,7 @@ SRS_UGOH$Sample<-rep(1:length(SRS_UGOH$Latitude))
 SRS_UGOH$Site<-paste(SRS_UGOH$Site, "_", SRS_UGOH$Sample,"_",SRS_UGOH$Year)
 
 SRS_UGOH<-SRS_UGOH |> 
-  select(Site,Latitude,Longitude)
+  select(Site,Year,Latitude,Longitude)
 
 
 
@@ -86,7 +86,7 @@ SRS_CBCT$Site<-paste(SRS_CBCT$Site, "_",  SRS_CBCT$Sample,"_",SRS_CBCT$Year )
 
 
 SRS_CBCT<-SRS_CBCT |> 
-  select(Site,Latitude,Longitude)
+  select(Site,Year,Latitude,Longitude)
 
 # CB_oxeye --------------------------------------------------------------
 
@@ -126,7 +126,7 @@ SRS_CBOD$Sample<-rep(1:length(SRS_CBOD$Latitude))
 SRS_CBOD$Site<-paste(SRS_CBOD$Site, "_", SRS_CBOD$Sample, "_", SRS_CBOD$Year)
 
 SRS_CBOD<-SRS_CBOD |> 
-  select(Site,Latitude,Longitude)
+  select(Site,Year,Latitude,Longitude)
 
 
 # CB_Hawkweed--------------------------------------------------------------
@@ -167,9 +167,8 @@ SRS_CBOH$Sample<-rep(1:length(SRS_CBOH$Latitude))
 SRS_CBOH$Site<-paste(SRS_CBOH$Site, "_", SRS_CBOH$Sample, "_", SRS_CBOH$Year)
 
 SRS_CBOH<-SRS_CBOH |> 
-  select(Site,Latitude,Longitude)
-
+  select(Site,Year,Latitude,Longitude)
 
 
 SRS_Invasive_SouthernAlaska<-rbind(SRS_UGOH,SRS_CBOH,SRS_CBOD,SRS_CBCT)
-write.csv(SRS_Invasive_SouthernAlaska,"./data/Sampling/SRS_Invasive_SouthernAlaska_20250218.csv", row.names=FALSE)
+write.csv(SRS_Invasive_SouthernAlaska,"./data/Sampling/SRS_Invasive_SouthernAlaska_20250306.csv", row.names=FALSE)
