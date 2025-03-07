@@ -1,3 +1,16 @@
+library(SSN2)
+library(ggplot2)
+library(arm)
+library(MASS)
+library(AICcmodavg)
+library(MuMIn)
+library(glmmTMB)
+library(DHARMa)
+library(ggeffects)
+library(bbmle)
+
+library(tidyverse)
+
 #invasive species
 
 
@@ -29,7 +42,10 @@ data <- data[, c("pointname",
                  "infestationname",
                  "Count",
                  "geometry",
-                 "dotcolor")] # leave the row index blank to keep all rows
+                 "dotcolor",
+                 "Notes")] # leave the row index blank to keep all rows
+
+
 #replace space in pointname wiht underscore
 data$pointname <- sub(" ", "_", data$pointname)
 data <- unite(data, Site, pointname:Year, remove = FALSE)
@@ -37,16 +53,20 @@ data <- unite(data, Site, pointname:Year, remove = FALSE)
 data$name <- substr(data$pointname, 1, 4)
 data$label <- data$infestationname
 
+data<-data |> 
+  rename(longitude=geometry, latitude=dotcolor) 
+
+data$longitude <- substring(data$longitude, 3)
+data$latitude <- sub(")", "", data$latitude)
 data <- data[, c(
   "Site",
   "name",
   "label",
   "Year",
-  "pointname",
-  "infestationname",
   "Count",
-  "geometry",
-  "dotcolor"
+  "longitude",
+  "latitude",
+  "Notes"
 )]
 
 write.csv(data,
