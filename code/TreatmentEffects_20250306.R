@@ -101,6 +101,14 @@ summary(Poisson)
 summary(NegBin)
 summary(ZINB)
 
+
+#look at model residuals--Is the model appropriate for the data? yes.
+
+simulationOutput<-simulateResiduals(fittedModel = ZINB, plot = F)
+plot(simulationOutput)
+plotQQunif(simulationOutput) # 
+
+
 # CBOH ----------------------------------------------------------------------
 
 
@@ -130,6 +138,13 @@ ZINB <-
 summary(Poisson)
 summary(NegBin)
 summary(ZINB)
+
+#look at model residuals--Is the model appropriate for the data? yes.
+
+simulationOutput<-simulateResiduals(fittedModel = ZINB, plot = F)
+plot(simulationOutput)
+plotQQunif(simulationOutput) # 
+
 
 # CBOD ----------------------------------------------------------------------
 
