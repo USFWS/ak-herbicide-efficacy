@@ -3,7 +3,7 @@
     "name": "ak-herbicide-efficacy",
     "organization": "U.S. Fish & Wildlife Service",
     "description": "Alaska Herbicide Efficacy Random Point Sample Generator",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "status": "Development",
 
     "permissions": {
@@ -32,7 +32,7 @@
     },
 
     "date": {
-      "metadataLastUpdated": "2025-02-18"
+      "metadataLastUpdated": "2026-06-23"
     }
   }
 ]
