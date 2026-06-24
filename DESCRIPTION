@@ -1,0 +1,18 @@
+Package: akHerbicideEfficiency
+Title: Generate a simple random spatial sample from a polygon layer.
+Version: 0.0.0.9000
+Authors@R: 
+    person("Jonah", "Withers", , "jonah_withers@fws.gov", role = c("aut", "cre"))
+Description: Generate a simple random spatial sample from a polygon layer.
+License: [Creative Commons Zero v1.0 Universal](https://choosealicense.com/licenses/cc0-1.0/)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: 
+    dplyr,
+    purrr,
+    sf,
+    tidyr
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
