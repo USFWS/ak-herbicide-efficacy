@@ -14,11 +14,16 @@ The U.S. Fish and Wildlife Service conducts annual surveys to identify the prese
 
 ## Installation
 
-Scripts rely on [tidyverse](https://www.tidyverse.org/) and [sf](https://r-spatial.github.io/sf/) packages.
+Scripts rely on the following packages:
+- [sf](https://cran.r-project.org/web/packages/sf/index.html)
+- [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html)
+- [purrr](https://cran.r-project.org/web/packages/purrr/index.html)
+- [tidyr](https://cran.r-project.org/web/packages/tidyr/index.html)
+
 
 ## Usage
 
-Scripts are currently designed for specific data collected in 2023 by the U.S. Fish and Wildlife Service. Until this workflow is generalized, users should not attempt to apply these scripts to their polygons.
+Scripts contain functions that are designed for general use on point sampling polygons. Note that default coordinate reference systems assume NAd83 Alaska Albers (EPSG 3338) as input and WGS84 (EPSG 4326) as the output. 
 
 ## Getting help
 
