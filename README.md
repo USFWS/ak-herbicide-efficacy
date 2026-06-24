@@ -31,6 +31,15 @@ earlier repository README (README).
 
 ## Installation
 
+You can install the development version of akHerbicideEfficacy directly from GitHub using the remotes or devtools package.
+
+Install using remotes (recommended)
+```r
+install.packages("remotes")
+remotes::install_github("USFWS/ak-herbicide-efficacy", ref = "Package")
+library(akHerbicideEfficacy)
+```
+
 Local installation (ZIP download)
 
 1.  Navigate to the Package branch:
@@ -60,12 +69,12 @@ earlier script‑based workflows referenced in README).
 
 ## Dependencies
 
-Scripts and functions rely on: -
-[sf](https://cran.r-project.org/web/packages/sf/index.html) -
-[dplyr](https://cran.r-project.org/web/packages/dplyr/index.html) -
-[purrr](https://cran.r-project.org/web/packages/purrr/index.html) -
-[tidyr](https://cran.r-project.org/web/packages/tidyr/index.html) -
-[tibble](https://cran.r-project.org/web/packages/tibble/index.html)
+Scripts and functions rely on: 
+- [sf](https://cran.r-project.org/web/packages/sf/index.html) 
+- [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html) 
+- [purrr](https://cran.r-project.org/web/packages/purrr/index.html) 
+- [tidyr](https://cran.r-project.org/web/packages/tidyr/index.html) 
+- [tibble](https://cran.r-project.org/web/packages/tibble/index.html)
 
 These will be installed automatically when using install_github().
 
