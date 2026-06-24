@@ -1,10 +1,13 @@
 Package: akHerbicideEfficiency
+Type: Package
 Title: Generate a simple random spatial sample from a polygon layer.
 Version: 0.0.0.9000
 Authors@R: 
     person("Jonah", "Withers", , "jonah_withers@fws.gov", role = c("aut", "cre"))
-Description: Generate a simple random spatial sample from a polygon layer.
-License: [Creative Commons Zero v1.0 Universal](https://choosealicense.com/licenses/cc0-1.0/)
+Description: Tools for creating simple random spatial samples from invasive plant polygons in Alaska. 
+    Includes functions for generating point samples, extracting coordinates, 
+    and processing multiple species in batch workflows.
+License: CC0-1.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
