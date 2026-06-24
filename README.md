@@ -1,17 +1,15 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
+<!-- badges: start -->
+
+<!-- For more info: https://usethis.r-lib.org/reference/badges.html -->
+
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+
+<!-- badges: end -->
 
 # Alaska Herbicide Efficacy
 
 Tools for generating random spatial samples for invasive plant
 monitoring in Alaska
-
-<https://img.shields.io/badge/lifecycle-experimental-orange.svg>](<https://lifecycle.r-lib.org/articles/stages.html#experimental>)
-<https://img.shields.io/github/issues/USFWS/ak-herbicide-efficacy.svg>](<https://github.com/USFWS/ak-herbicide-efficacy/issues>)
-<https://img.shields.io/github/commit-activity/m/USFWS/ak-herbicide-efficacy.svg>](<https://github.com/USFWS/ak-herbicide-efficacy>)
 
 ## Overview
 
@@ -32,23 +30,6 @@ previously existed only as standalone scripts, as described in the
 earlier repository README (README).
 
 ## Installation
-
-The package is hosted on GitHub and can be installed using either
-remotes or devtools.
-
-Install with remotes (recommended)
-
-``` r
-install.packages("remotes")
-remotes::install_github("USFWS/ak-herbicide-efficacy", ref = "Package")
-```
-
-Install with devtools
-
-``` r
-install.packages("devtools")
-devtools::install_github("USFWS/ak-herbicide-efficacy", ref = "Package")
-```
 
 Local installation (ZIP download)
 
