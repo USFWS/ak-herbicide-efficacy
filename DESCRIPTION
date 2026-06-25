@@ -1,4 +1,4 @@
-Package: akHerbicideEfficiency
+Package: akHerbicideEfficacy
 Type: Package
 Title: Generate a simple random spatial sample from a polygon layer.
 Version: 0.0.0.9000
