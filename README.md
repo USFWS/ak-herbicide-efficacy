@@ -93,8 +93,7 @@ These will be installed automatically when using install_github().
 
 Scripts contain functions that are designed for general use on point
 sampling polygons. Note that default coordinate reference systems assume
-NAD83 Alaska Albers (EPSG 3338) as input and WGS84 (EPSG 4326) as the
-output.
+WGS84 (EPSG 4326) as the input and output.
 
 ### Generate a single species sample
 

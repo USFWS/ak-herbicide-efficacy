@@ -48,8 +48,8 @@ directly. Otherwise, the function reads spatial data from \code{path}
 and \code{layer} using \code{sf::read_sf()}. Input geometries must be
 polygons or multipolygons.
 
-All geometries are transformed into Alaska Albers Equal Area
-(EPSG:3338) for spatial operations and returned in WGS84 (EPSG:4326).
+All geometries are transformed into WGS84
+(EPSG:4326) for spatial operations and returned in WGS84 (EPSG:4326).
 }
 
 \value{

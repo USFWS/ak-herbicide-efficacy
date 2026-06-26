@@ -33,8 +33,8 @@
 #' source. Otherwise, the function reads spatial data using
 #' \code{sf::read_sf(path, layer)}.  
 #'
-#' All geometries are validated and transformed to Alaska Albers
-#' (EPSG:3338) for sampling operations, and final sample coordinates are
+#' All geometries are validated and transformed to WGS84
+#' (EPSG:4326) for sampling operations, and final sample coordinates are
 #' returned in WGS84 (EPSG:4326).
 #'
 #' @return
@@ -106,18 +106,17 @@ generate_srs <- function(sf = NULL,
   # --- 2. SAMPLE GENERATION -------------------------------------------------
   
   poly <- sf::st_make_valid(poly)
-  poly <- sf::st_transform(poly, 3338)  # Alaska Albers
+  poly <- sf::st_transform(poly, 4326)  # WGS84 input
   
   # Random sample of n points
   pts <- sf::st_sample(poly, size = n, type = "random")
   
   pts <- sf::st_as_sf(pts)
-  pts <- sf::st_transform(pts, 4326)  # WGS84 output
   
   # --- 3. ATTRIBUTE ASSEMBLY ------------------------------------------------
   
   tib <- tibble::tibble(
-    Site = paste0(site_code, "-", seq_len(n)),
+    Site = paste0(site_code, "-", year, "-", seq_len(n)),
     Year = year,
     Longitude = sf::st_coordinates(pts)[, 1],
     Latitude  = sf::st_coordinates(pts)[, 2]
