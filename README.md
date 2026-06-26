@@ -29,6 +29,17 @@ The functions included here formalize and package workflows that
 previously existed only as standalone scripts, as described in the
 earlier repository README (README).
 
+
+## New Capabilities (2026 Update)
+
+The package now supports **dual input modes** for polygon sampling:
+
+1. **In‑memory input** using an `sf` object  
+2. **File‑based input** using `path` + `layer`
+
+This applies to both `generate_srs()` and `multi_srs()`.
+
+
 ## Installation
 
 You can install the development version of akHerbicideEfficacy directly from GitHub using the remotes or devtools package.
